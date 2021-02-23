@@ -41,7 +41,21 @@ body{
     height: 100px;
     background-color: orange;
     border-radius: 50%;
-
+}
+@media only screen and (max-width: 930px){
+  .overlay-1{
+     width: 200px;
+     height: 200px;
+  }
+  .bubble{
+    width: 60px;
+    height: 60px;
+  }
+}
+@media only screen and (max-width: 620px){
+    .overlay-1{
+     display: none;
+    }
 }
 .social-links{
     position: absolute;
@@ -52,10 +66,22 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
+@media only screen and (max-width: 620px){
+  .social-links{
+    top: 90%;
+    width: 100%;
+    left: 0;
+    transform: none;
+    flex-direction: row;
+    height: 100px;
+
+  }
+}
 .social-links a{
     color: white;
-    transition: 1s;
+    transition: 1s transform;
     padding: 15px;
+
 }
 .social-links a:hover{
     transform: scale(2.2);
@@ -163,13 +189,12 @@ header .logo{
       background-image: url('../images/profile.png');
       background-size: cover;
       border-radius: 50%;
-      transition: 2s;
+      transition:border-bottom 0.5s;
       backface-visibility: hidden;
       border-bottom: 5px solid orange;
+
   }  
   .profile:hover{
-    transform: rotateY(-20deg);
-    transform: rotateX(-20deg);
     border-bottom: 10px solid orange;
   }
 
@@ -181,6 +206,14 @@ p.type-writer {
     text-align: center;
     overflow: hidden;
     color: white;
+  }
+  @media only screen and (max-width: 620px){
+    p.type-writer {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      font-weight: bold;
+     
+    }
   }
   p.type-writer  span.typed-text {
     font-weight: normal;
@@ -312,6 +345,7 @@ p.type-writer {
    transition: 0.5s;
    text-align: center;
    padding: 0px 10px 20px ;
+   /* transform: rotate(-5deg) */
   }
   .card-main .card:hover{
     transform: translateY(-5%);
